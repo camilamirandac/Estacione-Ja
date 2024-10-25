@@ -1,15 +1,16 @@
 import { FC, useState } from 'react'
 import './App.css'
+//@ts-expect-error typing missing
 import logoimg from './assets/logo.png'
 
 // Embed map helper: https://embedmap.org
 
 const parkingList = [
-  {name: 'Ana', price:20, address:'Av. Paulista, 1927'},
-  {name: 'Ana', price:20, address:'Av. Paulista, 222'},
-  {name: 'Ana', price:20, address:'Av. Paulista, 145'},
-  {name: 'Ana', price:20, address:'Av. Paulista, 2305'},
-  {name: 'Ana', price:20, address:'Av. Paulista, 6545'},
+    { "name": "Estacionamento Central Park", "price": 12, "address": "Rua Haddock Lobo, 123 - Jardins, São Paulo, SP" },
+    { "name": "Garagem do Pátio", "price": 18.50, "address": "Av. Paulista, 456 - Bela Vista, São Paulo, SP" },
+    { "name": "Estacionamento Alpha", "price": 10, "address": "Rua Augusta, 789 - Consolação, São Paulo, SP" },
+    { "name": "Estacionamento Rápido", "price": 11, "address": "Rua 25 de Março, 303 - Centro, São Paulo, SP" },
+    { "name": "Garagem Econômica", "price": 8, "address": "Rua da Consolação, 404 - Higienópolis, São Paulo, SP" },
 ]
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
               <h2 className='mt-1'>Estacione Já</h2>
             </div>
             <div className="col text-end">
-              <a href='https://google.com/' target='_blank' className="btn btn-primary">Contribua</a>
+              <a href='https://forms.gle/pLzC6oXsvQMSwThb6' target='_blank' className="btn btn-primary">Contribua</a>
             </div>
           </div>
           <h2>Lista de estacionamentos</h2>
@@ -37,7 +38,7 @@ function App() {
               return (
                 <li className="list-group-item" style={{backgroundColor: bg}}>
                   <div><h5>{parking.name}</h5></div>
-                  <div>Preço: R$ {parking.price}</div>
+                  <div>Preço: R$ {parking.price.toFixed(2)}</div>
                   <div>Endereço: <a onClick={() => setAddress(parking.address)} href='#'>{parking.address}</a></div>
                 </li>
               );
