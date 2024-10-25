@@ -1,6 +1,6 @@
 # Estacione Já App
 
-## Instructions to run locally
+## Instruções para rodar localmente
 
 1. `npm install`;
 2. `npm run dev`;
